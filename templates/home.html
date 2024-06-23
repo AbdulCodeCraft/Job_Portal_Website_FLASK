@@ -10,10 +10,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <title>HTML 5 Boilerplate</title>
+    <title>Flask Project</title>
     <style></style>
   </head>
-  <body class="my-4">
+  <body class="mb-4">
+   {% include "nav.html" %}
     <h1 class="text-center">AR Companies Private Limited.</h1>
     <img
       class="img-fluid d-flex align-center my-3"
@@ -37,25 +38,7 @@
 
     <h2 class="text-center mb-3">Open Positions</h2>
 
-    <p>
-      <!-- templating syntax -->
-       {%for job in jobs %}
-
-       <div class="container-fluid d-flex align-item-center bg-primary row m-3 p-3 text-white">
-        <div class="col-9">
-          <h4>{{job['title']}}</h4>
-          <div><b>Location :</b> {{job['location']}}</div>
-          <div><b>Salary :</b> {{job['Salary']}}</div> 
-        </div>
-
-        <div class="col-3 d-flex align-items-center ">
-          <button class="btn btn-outline-dark"> Apply </button>
-        </div>
-        
-      </div>
-
-       {% endfor %}
-    </p>
+    {% include "jobPosition.html"%}
 
     <button class="btn btn-outline-dark">Contact Us</button>
 
